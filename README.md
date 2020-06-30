@@ -42,7 +42,7 @@ A tool helps you to check the server informaton and check the .Net Core capable 
     ...
   ```
   
-  - Check redis
+- Check redis
   
   ```shell
   dotnet-checker.exe redis -c 127.0.0.1:6379
@@ -79,7 +79,7 @@ A tool helps you to check the server informaton and check the .Net Core capable 
     ...
   ```
 
-  - Check redis
+- Check redis
   
   ```shell
   ./dotnet-checker -c 127.0.0.1:6379
