@@ -42,17 +42,17 @@ A tool helps you to check the server informaton and check the .Net Core capable 
     ...
   ```
   
-- Check redis
+  - Check redis
   
-  ```shell
-  dotnet-checker.exe redis -c 127.0.0.1:6379
-  StringSet is normal.
-  StringGet is normal, value is OK.
-  KeyDelete is normal.
-  
-  dotnet-checker.exe redis get test -c 127.0.0.1:6379
-  test
-  ```
+    ```shell
+    dotnet-checker.exe redis -c 127.0.0.1:6379
+    StringSet is normal.
+    StringGet is normal, value is OK.
+    KeyDelete is normal.
+    
+    dotnet-checker.exe redis get test -c 127.0.0.1:6379
+    test
+    ```
   
 - Linux
   
@@ -79,14 +79,14 @@ A tool helps you to check the server informaton and check the .Net Core capable 
     ...
   ```
 
-- Check redis
+  - Check redis
   
-  ```shell
-  ./dotnet-checker -c 127.0.0.1:6379
-  StringSet is normal.
-  StringGet is normal, value is OK.
-  KeyDelete is normal.
-  
-  ./dotnet-checker redis get test -c 127.0.0.1:6379
-  test
-  ```
+    ```shell
+    ./dotnet-checker -c 127.0.0.1:6379
+    StringSet is normal.
+    StringGet is normal, value is OK.
+    KeyDelete is normal.
+    
+    ./dotnet-checker redis get test -c 127.0.0.1:6379
+    test
+    ```
