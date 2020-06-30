@@ -1,11 +1,12 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using McMaster.Extensions.CommandLineUtils;
 using StackExchange.Redis;
 
-namespace DotnetChecker.Commands
+namespace DotnetChecker.Commands.Redis
 {
-    [Command("redis", Description = "Check redis")]
-    public class RedisCommand
+    [Command("get", Description = "Get redis string value")]
+    public class GetStringCommand
     {
         private const string StackExchange = "StackExchange";
         private const string CsRedis = "CsRedis";
@@ -16,9 +17,16 @@ namespace DotnetChecker.Commands
         [Option("-c|--Connection", "Redis connection string, example: localhost:6379", CommandOptionType.SingleValue)]
         public string Connection { get; set; }
 
+        [Option("-i|--Index", "Redis database index, default 0", CommandOptionType.SingleValue)]
+        public int Index { get; set; }
+
+        [Argument(0)]
+        [Required]
+        public string Key { get; set; }
+
         private readonly IConsole _console;
 
-        public RedisCommand(IConsole console)
+        public GetStringCommand(IConsole console)
         {
             _console = console;
         }
@@ -45,7 +53,7 @@ namespace DotnetChecker.Commands
                         _console.WriteLine("Error occurs.");
                         _console.WriteLine(ex);
                     }
-                   
+
                     break;
             }
         }
@@ -54,20 +62,10 @@ namespace DotnetChecker.Commands
         {
             var conn = ConnectionMultiplexer.Connect(connection);
 
-            var db = conn.GetDatabase();
+            var db = conn.GetDatabase(Index);
 
-            var key = $"dotnet-checker-{Guid.NewGuid()}";
-            db.StringSet(key, "OK");
-            _console.WriteLine("StringSet is normal.");
-
-            var value = db.StringGet(key);
-            _console.WriteLine($"StringGet is normal, value is {value}.");
-
-            var isOk = db.KeyDelete(key);
-            if (isOk)
-            {
-                _console.WriteLine("KeyDelete is normal.");
-            }
+            var value = db.StringGet(Key);
+            _console.WriteLine(value);
         }
     }
 }

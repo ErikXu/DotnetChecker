@@ -1,12 +1,13 @@
-﻿using DotnetChecker.Commands;
+﻿using DotnetChecker.Commands.Info;
+using DotnetChecker.Commands.Redis;
 using McMaster.Extensions.CommandLineUtils;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DotnetChecker
 {
     [HelpOption(Inherited = true)]
-    [Command(Description = "A tool to check .net core capable."),
-     Subcommand(typeof(RedisCommand))]
+    [Command(Description = "A tool to check .net core capable for redis"),
+     Subcommand(typeof(RedisCommand)), Subcommand(typeof(InfoCommand))]
     class Program
     {
         public static int Main(string[] args)
