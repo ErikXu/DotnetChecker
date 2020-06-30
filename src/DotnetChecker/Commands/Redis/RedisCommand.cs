@@ -11,7 +11,7 @@ namespace DotnetChecker.Commands.Redis
         private const string StackExchange = "StackExchange";
         private const string CsRedis = "CsRedis";
 
-        [Option("-d|--Driver", "Redis driver, " + StackExchange + " or " + StackExchange + ", default " + StackExchange, CommandOptionType.SingleOrNoValue)]
+        [Option("-d|--Driver", "Redis driver, " + StackExchange + " or " + CsRedis + ", default " + StackExchange, CommandOptionType.SingleOrNoValue)]
         public string Type { get; set; }
 
         [Option("-c|--Connection", "Redis connection string, example: localhost:6379", CommandOptionType.SingleValue)]
