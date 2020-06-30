@@ -24,7 +24,7 @@ A tool helps you to check the server informaton and check the .Net Core capable 
   - Get server info
   
   ```shell
-  dotnet-checker info
+  dotnet-checker.exe info
   
   Machine Name: xxx
   Host Name: xxx
@@ -37,12 +37,21 @@ A tool helps you to check the server informaton and check the .Net Core capable 
   Processors: 8
   Memory: Total 32727(M), Used 8680(M), Free 24047(M)
   Ip Addresses:
-    xxxx::xxxx:xxxx:xxxx:cb20%3
-    xxxx::xxxx:xxxx:xxxx:2e35%13
-    xxxx::xxxx:xxxx:xxxx:e06e%16
+    xxxx::xxxx:xxxx:xxxx:xxxx
     xxx.xxx.xxx.xxx
-    192.168.193.1
-    192.168.204.1
+    ...
+  ```
+  
+  - Check redis
+  
+  ```shell
+  dotnet-checker.exe redis -c 127.0.0.1:6379
+  StringSet is normal.
+  StringGet is normal, value is OK.
+  KeyDelete is normal.
+  
+  dotnet-checker.exe redis get test -c 127.0.0.1:6379
+  test
   ```
   
 - Linux
@@ -65,11 +74,19 @@ A tool helps you to check the server informaton and check the .Net Core capable 
   Processors: 4
   Memory: Total 7812(M), Used 4040(M), Free 405(M)
   Ip Addresses:
-    xxxx::xxxx:xxxx:xxxx:ae27%3
-    xxxx::xxxx:xxxx:xxxx:eeee%63
-    xxxx::xxxx:xxxx:xxxx:eeee%64
-    xxxx::xxxx:xxxx:xxxx:eeee%65
+    xxxx::xxxx:xxxx:xxxx:xxxx
     xxx.xxx.xxx.xxx
-    172.17.0.1
-    10.244.36.64
+    ...
+  ```
+
+  - Check redis
+  
+  ```shell
+  ./dotnet-checker -c 127.0.0.1:6379
+  StringSet is normal.
+  StringGet is normal, value is OK.
+  KeyDelete is normal.
+  
+  ./dotnet-checker redis get test -c 127.0.0.1:6379
+  test
   ```
