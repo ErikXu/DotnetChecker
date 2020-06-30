@@ -9,6 +9,7 @@
 	<ItemGroup>
 		<PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="3.0.0" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.2" />
+		<PackageReference Include="MongoDB.Driver" Version="2.10.4" />
 		<PackageReference Include="StackExchange.Redis" Version="2.1.58" />
 	</ItemGroup>
 
