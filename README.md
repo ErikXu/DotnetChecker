@@ -24,7 +24,7 @@ A tool helps you to check the server informaton and check the .Net Core capable 
   - Get server info
   
     ```shell
-    dotnet-checker.exe info
+    > dotnet-checker.exe info
     
     Machine Name: xxx
     Host Name: xxx
@@ -45,12 +45,12 @@ A tool helps you to check the server informaton and check the .Net Core capable 
   - Check redis
   
     ```shell
-    dotnet-checker.exe redis -c 127.0.0.1:6379
+    > dotnet-checker.exe redis -c 127.0.0.1:6379
     StringSet is normal.
     StringGet is normal, value is OK.
     KeyDelete is normal.
     
-    dotnet-checker.exe redis get test -c 127.0.0.1:6379
+    > dotnet-checker.exe redis get test -c 127.0.0.1:6379
     test
     ```
   
@@ -61,7 +61,7 @@ A tool helps you to check the server informaton and check the .Net Core capable 
   - Get server info
   
     ```bash
-    ./dotnet-checker info
+    > ./dotnet-checker info
     
     Machine Name: xxx
     Host Name: xxx
@@ -82,11 +82,11 @@ A tool helps you to check the server informaton and check the .Net Core capable 
   - Check redis
   
     ```shell
-    ./dotnet-checker -c 127.0.0.1:6379
+    > ./dotnet-checker -c 127.0.0.1:6379
     StringSet is normal.
     StringGet is normal, value is OK.
     KeyDelete is normal.
     
-    ./dotnet-checker redis get test -c 127.0.0.1:6379
+    > ./dotnet-checker redis get test -c 127.0.0.1:6379
     test
     ```
