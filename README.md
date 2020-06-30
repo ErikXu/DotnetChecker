@@ -54,6 +54,15 @@ A tool helps you to check the server informaton and check the .Net Core capable 
     test
     ```
   
+  - Check mongo
+    ```shell
+    > dotnet-checker.exe mongo -c mongodb://127.0.0.1:27017/test -d test
+    InsertOne is normal.
+    Find is normal. The value is { "_id" : ObjectId("5efb2db48278cb7ff8ba2fa2"), "id" : "0ed4c50c-d9aa-44a5-8ec9-f8fa7b9b09fe", "name" : "dotnet-checker", "timestamp" : NumberLong(1593519540) }
+    DeleteOne is normal.
+    DropCollection is normal.
+    ```
+  
 - Linux
   
   - Copy the `dotnet-checker` to server and execute `chmod +x dotnet-checker`.
@@ -81,7 +90,7 @@ A tool helps you to check the server informaton and check the .Net Core capable 
 
   - Check redis
   
-    ```shell
+    ```bash
     > ./dotnet-checker -c 127.0.0.1:6379
     StringSet is normal.
     StringGet is normal, value is OK.
@@ -91,6 +100,16 @@ A tool helps you to check the server informaton and check the .Net Core capable 
     test
     ```
 
+  - Check mongo
+  
+    ```bash
+    > ./dotnet-checker mongo -c mongodb://127.0.0.1:27017/test -d test
+    InsertOne is normal.
+    Find is normal. The value is { "_id" : ObjectId("5efb2db48278cb7ff8ba2fa2"), "id" : "0ed4c50c-d9aa-44a5-8ec9-f8fa7b9b09fe", "name" : "dotnet-checker", "timestamp" : NumberLong(1593519540) }
+    DeleteOne is normal.
+    DropCollection is normal.
+    ```
+    
 ## Best Practice
 
 1. Install [MinIO](https://min.io/)  
