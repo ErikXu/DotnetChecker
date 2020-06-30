@@ -23,24 +23,24 @@ A tool helps you to check the server informaton and check the .Net Core capable 
 
   - Get server info
   
-  ```shell
-  dotnet-checker.exe info
-  
-  Machine Name: xxx
-  Host Name: xxx
-  User Domain Name: xxx
-  User Name: Administrator
-  OS Description: Microsoft Windows 10.0.18362
-  OS Architecture: X64
-  Process Architecture: X64
-  System PageSize: 4096
-  Processors: 8
-  Memory: Total 32727(M), Used 8680(M), Free 24047(M)
-  Ip Addresses:
-    xxxx::xxxx:xxxx:xxxx:xxxx
-    xxx.xxx.xxx.xxx
-    ...
-  ```
+    ```shell
+    dotnet-checker.exe info
+    
+    Machine Name: xxx
+    Host Name: xxx
+    User Domain Name: xxx
+    User Name: Administrator
+    OS Description: Microsoft Windows 10.0.18362
+    OS Architecture: X64
+    Process Architecture: X64
+    System PageSize: 4096
+    Processors: 8
+    Memory: Total 32727(M), Used 8680(M), Free 24047(M)
+    Ip Addresses:
+      xxxx::xxxx:xxxx:xxxx:xxxx
+      xxx.xxx.xxx.xxx
+      ...
+    ```
   
   - Check redis
   
@@ -60,24 +60,24 @@ A tool helps you to check the server informaton and check the .Net Core capable 
   
   - Get server info
   
-  ```bash
-  ./dotnet-checker info
-  
-  Machine Name: xxx
-  Host Name: xxx
-  User Domain Name: xxx
-  User Name: root
-  OS Description: Linux 3.10.0-1062.18.1.el7.x86_64 #1 SMP Tue Mar 17 23:49:17 UTC 2020
-  OS Architecture: X64
-  Process Architecture: X64
-  System PageSize: 4096
-  Processors: 4
-  Memory: Total 7812(M), Used 4040(M), Free 405(M)
-  Ip Addresses:
-    xxxx::xxxx:xxxx:xxxx:xxxx
-    xxx.xxx.xxx.xxx
-    ...
-  ```
+    ```bash
+    ./dotnet-checker info
+    
+    Machine Name: xxx
+    Host Name: xxx
+    User Domain Name: xxx
+    User Name: root
+    OS Description: Linux 3.10.0-1062.18.1.el7.x86_64 #1 SMP Tue Mar 17 23:49:17 UTC 2020
+    OS Architecture: X64
+    Process Architecture: X64
+    System PageSize: 4096
+    Processors: 4
+    Memory: Total 7812(M), Used 4040(M), Free 405(M)
+    Ip Addresses:
+      xxxx::xxxx:xxxx:xxxx:xxxx
+      xxx.xxx.xxx.xxx
+      ...
+    ```
 
   - Check redis
   
