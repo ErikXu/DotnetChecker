@@ -90,3 +90,10 @@ A tool helps you to check the server informaton and check the .Net Core capable 
     > ./dotnet-checker redis get test -c 127.0.0.1:6379
     test
     ```
+
+## Best Practice
+
+1. Install [MinIO](https://min.io/)  
+2. Upload dotnet-checker to [MinIO](https://min.io/)    
+3. Download dotnet-checker in your server or docker container  
+4. Execute your checking
