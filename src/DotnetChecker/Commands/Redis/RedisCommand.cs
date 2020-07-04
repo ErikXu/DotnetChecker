@@ -24,7 +24,7 @@ namespace DotnetChecker.Commands.Redis
             _console = console;
         }
 
-        private void OnExecute()
+        public void OnExecute()
         {
             if (string.IsNullOrWhiteSpace(Connection))
             {

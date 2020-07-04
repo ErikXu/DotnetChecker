@@ -20,7 +20,7 @@ namespace DotnetChecker.Commands.Mongo
             _console = console;
         }
 
-        private void OnExecute()
+        public void OnExecute()
         {
             if (string.IsNullOrWhiteSpace(Connection))
             {
@@ -58,7 +58,7 @@ namespace DotnetChecker.Commands.Mongo
 
             if (entity != null)
             {
-                _console.WriteLine($"Find is normal. The value is {entity.ToString()}");
+                _console.WriteLine($"Find is normal. The value is {entity}");
             }
 
             collection.DeleteOne(entity);

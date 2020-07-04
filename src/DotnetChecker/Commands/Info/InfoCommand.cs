@@ -16,7 +16,7 @@ namespace DotnetChecker.Commands.Info
             _console = console;
 
         }
-        private void OnExecute()
+        public void OnExecute()
         {
             PrintBasicInfo();
             PrintMemory();

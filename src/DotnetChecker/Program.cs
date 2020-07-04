@@ -1,4 +1,5 @@
-﻿using DotnetChecker.Commands.Info;
+﻿using DotnetChecker.Commands.Env;
+using DotnetChecker.Commands.Info;
 using DotnetChecker.Commands.Mongo;
 using DotnetChecker.Commands.Redis;
 using McMaster.Extensions.CommandLineUtils;
@@ -8,7 +9,8 @@ namespace DotnetChecker
 {
     [HelpOption(Inherited = true)]
     [Command(Description = "A tool to check .net core capable for redis"),
-     Subcommand(typeof(InfoCommand)), Subcommand(typeof(RedisCommand)), Subcommand(typeof(MongoCommand))]
+     Subcommand(typeof(InfoCommand)), Subcommand(typeof(RedisCommand)), 
+     Subcommand(typeof(MongoCommand)), Subcommand(typeof(EnvCommand))]
     class Program
     {
         public static int Main(string[] args)
