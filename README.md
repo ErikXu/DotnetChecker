@@ -40,7 +40,7 @@ Ip Addresses:
   ...
 ```
 
-- Check ping
+- Ping
 ```bash
 > dotnet-checker ping 127.0.0.1
 Address: 127.0.0.1
@@ -50,7 +50,7 @@ Don't fragment: False
 Buffer size: 32
 ```
 
-- Check telnet
+- Telnet
 ```bash
 > dotnet-checker telnet 127.0.0.1 80
 Connected to 127.0.0.1:80
