@@ -8,10 +8,9 @@ namespace DotnetChecker.Commands.Network
     /// <summary>
     /// https://docs.microsoft.com/en-us/dotnet/api/system.net.networkinformation.ping?view=netcore-3.1
     /// </summary>
-    [Command("ping", Description = "Ping a server")]
+    [Command("ping", Description = "Ping an address")]
     public class PingCommand
     {
-
         [Argument(0)]
         [Required]
         public string Address { get; set; }

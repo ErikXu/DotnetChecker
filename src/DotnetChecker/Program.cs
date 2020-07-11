@@ -12,7 +12,7 @@ namespace DotnetChecker
     [Command(Description = "A tool to check .net core capable for redis"),
      Subcommand(typeof(InfoCommand)), Subcommand(typeof(RedisCommand)), 
      Subcommand(typeof(MongoCommand)), Subcommand(typeof(EnvCommand)), 
-     Subcommand(typeof(PingCommand))]
+     Subcommand(typeof(PingCommand)), Subcommand(typeof(TelnetCommand))]
     class Program
     {
         public static int Main(string[] args)
