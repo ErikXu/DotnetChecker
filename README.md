@@ -63,13 +63,19 @@ DropCollection is normal.
 ```
 
 - Check ping
-```shell
+```bash
 > dotnet-checker ping 127.0.0.1
 Address: 127.0.0.1
 RoundTrip time: 0
 Time to live: 64
 Don't fragment: False
 Buffer size: 32
+```
+
+- Check telnet
+```bash
+> dotnet-checker telnet 127.0.0.1 80
+Connected to 127.0.0.1:80
 ```
     
 ## Best Practice
