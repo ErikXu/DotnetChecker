@@ -42,7 +42,7 @@ Ip Addresses:
 
 - Ping
 ```bash
-> dotnet-checker ping 127.0.0.1
+> ./dotnet-checker ping 127.0.0.1
 Address: 127.0.0.1
 RoundTrip time: 0
 Time to live: 64
@@ -52,7 +52,7 @@ Buffer size: 32
 
 - Telnet
 ```bash
-> dotnet-checker telnet 127.0.0.1 80
+> ./dotnet-checker telnet 127.0.0.1 80
 Connected to 127.0.0.1:80
 ```
 
@@ -65,7 +65,7 @@ StringGet is normal, value is OK.
 KeyDelete is normal.
 
 > ./dotnet-checker redis get test -c 127.0.0.1:6379
-test
+test-value
 ```
 
 - Check mongo
