@@ -15,8 +15,7 @@ The [.NET 3.1 SDK](https://dotnet.microsoft.com/download) is requird when buildi
 
   Execute `src/build_linux.bat` to generate.
 
-Copy `dotnet-checker.exe` to windows server, and call `dotnet-checker.exe`.  
-Copy the `dotnet-checker` to linux server, execute `chmod +x dotnet-checker`, and call `./dotnet-checker`.
+Copy `dotnet-checker.exe` to windows server, and call `dotnet-checker.exe`. Copy the `dotnet-checker` to linux server, execute `chmod +x dotnet-checker`, and call `./dotnet-checker`.
   
 ## Usage
   
