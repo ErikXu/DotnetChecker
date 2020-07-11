@@ -1,7 +1,7 @@
 # DotnetChecker
 
 ## Introduction
-A tool helps you to check the server informaton and check the .Net Core capable for softwares like redis, mongo etc, while .Net Core runtime or sdk is not required.
+A tool helps you to check the server informaton and check the .Net Core capable for softwares like redis, mongo etc, while .Net Core runtime or sdk is `not` required.
 
 ## Build
 
