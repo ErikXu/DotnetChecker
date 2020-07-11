@@ -35,11 +35,11 @@ namespace DotnetChecker.Commands.Network
 
             if (reply.Status == IPStatus.Success)
             {
-                console.WriteLine($"       Address: {reply.Address}");
+                console.WriteLine($"Address: {reply.Address}");
                 console.WriteLine($"RoundTrip time: {reply.RoundtripTime}");
-                console.WriteLine($"  Time to live: {reply.Options.Ttl}");
+                console.WriteLine($"Time to live: {reply.Options.Ttl}");
                 console.WriteLine($"Don't fragment: {reply.Options.DontFragment}");
-                console.WriteLine($"   Buffer size: {reply.Buffer.Length}");
+                console.WriteLine($"Buffer size: {reply.Buffer.Length}");
             }
             else
             {
