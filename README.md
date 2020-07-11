@@ -39,7 +39,23 @@ Ip Addresses:
   xxx.xxx.xxx.xxx
   ...
 ```
-  
+
+- Check ping
+```bash
+> dotnet-checker ping 127.0.0.1
+Address: 127.0.0.1
+RoundTrip time: 0
+Time to live: 64
+Don't fragment: False
+Buffer size: 32
+```
+
+- Check telnet
+```bash
+> dotnet-checker telnet 127.0.0.1 80
+Connected to 127.0.0.1:80
+```
+
 - Check redis
 
 ```bash
@@ -60,22 +76,6 @@ InsertOne is normal.
 Find is normal. The value is { "_id" : ObjectId("5efb2db48278cb7ff8ba2fa2"), "id" : "0ed4c50c-d9aa-44a5-8ec9-f8fa7b9b09fe", "name" : "dotnet-checker", "timestamp" : NumberLong(1593519540) }
 DeleteOne is normal.
 DropCollection is normal.
-```
-
-- Check ping
-```bash
-> dotnet-checker ping 127.0.0.1
-Address: 127.0.0.1
-RoundTrip time: 0
-Time to live: 64
-Don't fragment: False
-Buffer size: 32
-```
-
-- Check telnet
-```bash
-> dotnet-checker telnet 127.0.0.1 80
-Connected to 127.0.0.1:80
 ```
     
 ## Best Practice
