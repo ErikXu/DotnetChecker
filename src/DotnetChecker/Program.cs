@@ -2,6 +2,7 @@
 using DotnetChecker.Commands.Info;
 using DotnetChecker.Commands.Mongo;
 using DotnetChecker.Commands.Network;
+using DotnetChecker.Commands.Rabbit;
 using DotnetChecker.Commands.Redis;
 using McMaster.Extensions.CommandLineUtils;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,10 +10,11 @@ using Microsoft.Extensions.DependencyInjection;
 namespace DotnetChecker
 {
     [HelpOption(Inherited = true)]
-    [Command(Description = "A tool to check .net core capable for redis"),
+    [Command(Description = "A tool to check server information and .Net Core capable for software"),
      Subcommand(typeof(InfoCommand)), Subcommand(typeof(RedisCommand)), 
      Subcommand(typeof(MongoCommand)), Subcommand(typeof(EnvCommand)), 
-     Subcommand(typeof(PingCommand)), Subcommand(typeof(TelnetCommand))]
+     Subcommand(typeof(PingCommand)), Subcommand(typeof(TelnetCommand)), 
+     Subcommand(typeof(RabbitCommand))]
     class Program
     {
         public static int Main(string[] args)
@@ -41,7 +43,7 @@ namespace DotnetChecker
             }
         }
 
-        private int OnExecute(CommandLineApplication app, IConsole console)
+        public int OnExecute(CommandLineApplication app, IConsole console)
         {
             console.WriteLine("Please specify a command.");
             app.ShowHelp();

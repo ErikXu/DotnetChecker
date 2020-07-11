@@ -5,7 +5,7 @@ using McMaster.Extensions.CommandLineUtils;
 
 namespace DotnetChecker.Commands.Network
 {
-    [Command("telnet", Description = "telnet an address and port")]
+    [Command("telnet", Description = "Telnet an address and port")]
     public class TelnetCommand
     {
         [Argument(0)]

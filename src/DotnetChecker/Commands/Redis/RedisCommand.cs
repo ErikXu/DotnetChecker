@@ -11,10 +11,10 @@ namespace DotnetChecker.Commands.Redis
         private const string StackExchange = "StackExchange";
         private const string CsRedis = "CsRedis";
 
-        [Option("-d|--Driver", "Redis driver, " + StackExchange + " or " + CsRedis + ", default " + StackExchange, CommandOptionType.SingleOrNoValue)]
+        [Option("-d|--driver", "Redis driver, " + StackExchange + " or " + CsRedis + ", default " + StackExchange, CommandOptionType.SingleOrNoValue)]
         public string Type { get; set; }
 
-        [Option("-c|--Connection", "Redis connection string, example: localhost:6379", CommandOptionType.SingleValue)]
+        [Option("-c|--connection", "Redis connection string, example: localhost:6379", CommandOptionType.SingleValue)]
         public string Connection { get; set; }
 
         private readonly IConsole _console;
@@ -32,22 +32,29 @@ namespace DotnetChecker.Commands.Redis
                 return;
             }
 
-            switch (Type)
+            try
             {
-                case CsRedis:
-                    break;
-                default:
-                    try
-                    {
-                        CheckStackExchange(Connection);
-                    }
-                    catch (Exception ex)
-                    {
-                        _console.WriteLine("Error occurs.");
-                        _console.WriteLine(ex);
-                    }
-                   
-                    break;
+                switch (Type)
+                {
+                    case CsRedis:
+                        break;
+                    default:
+                        try
+                        {
+                            CheckStackExchange(Connection);
+                        }
+                        catch (Exception ex)
+                        {
+                            _console.WriteLine("Error occurs.");
+                            _console.WriteLine(ex);
+                        }
+
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                _console.WriteLine(ex.Message);
             }
         }
 

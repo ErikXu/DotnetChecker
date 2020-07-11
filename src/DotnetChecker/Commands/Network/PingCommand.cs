@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Net.NetworkInformation;
 using System.Text;
 using McMaster.Extensions.CommandLineUtils;
@@ -17,33 +18,40 @@ namespace DotnetChecker.Commands.Network
 
         public void OnExecute(IConsole console)
         {
-            var ping = new Ping();
-            var options = new PingOptions
+            try
             {
-                DontFragment = true
-            };
+                var ping = new Ping();
+                var options = new PingOptions
+                {
+                    DontFragment = true
+                };
 
-            var buffer = Encoding.UTF8.GetBytes("12345678123456781234567812345678");
-            var timeout = 128;
-            var reply = ping.Send(Address, timeout, buffer, options);
+                var buffer = Encoding.UTF8.GetBytes("12345678123456781234567812345678");
+                var timeout = 128;
+                var reply = ping.Send(Address, timeout, buffer, options);
 
-            if (reply == null)
-            {
-                console.WriteLine("Error occurs.");
-                return;
+                if (reply == null)
+                {
+                    console.WriteLine("Error occurs.");
+                    return;
+                }
+
+                if (reply.Status == IPStatus.Success)
+                {
+                    console.WriteLine($"Address: {reply.Address}");
+                    console.WriteLine($"RoundTrip time: {reply.RoundtripTime}");
+                    console.WriteLine($"Time to live: {reply.Options.Ttl}");
+                    console.WriteLine($"Don't fragment: {reply.Options.DontFragment}");
+                    console.WriteLine($"Buffer size: {reply.Buffer.Length}");
+                }
+                else
+                {
+                    console.WriteLine($"Can not reach {Address}, reason: {reply.Status.ToString()}");
+                }
             }
-
-            if (reply.Status == IPStatus.Success)
+            catch (Exception ex)
             {
-                console.WriteLine($"Address: {reply.Address}");
-                console.WriteLine($"RoundTrip time: {reply.RoundtripTime}");
-                console.WriteLine($"Time to live: {reply.Options.Ttl}");
-                console.WriteLine($"Don't fragment: {reply.Options.DontFragment}");
-                console.WriteLine($"Buffer size: {reply.Buffer.Length}");
-            }
-            else
-            {
-                console.WriteLine($"Can not reach {Address}, reason: {reply.Status.ToString()}");
+                console.WriteLine(ex.Message);
             }
         }
     }
