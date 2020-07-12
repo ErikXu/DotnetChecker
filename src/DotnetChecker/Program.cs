@@ -1,6 +1,7 @@
 ﻿using DotnetChecker.Commands.Env;
 using DotnetChecker.Commands.Info;
 using DotnetChecker.Commands.Mongo;
+using DotnetChecker.Commands.MySQL;
 using DotnetChecker.Commands.Network;
 using DotnetChecker.Commands.Rabbit;
 using DotnetChecker.Commands.Redis;
@@ -14,7 +15,7 @@ namespace DotnetChecker
      Subcommand(typeof(InfoCommand)), Subcommand(typeof(RedisCommand)), 
      Subcommand(typeof(MongoCommand)), Subcommand(typeof(EnvCommand)), 
      Subcommand(typeof(PingCommand)), Subcommand(typeof(TelnetCommand)), 
-     Subcommand(typeof(RabbitCommand))]
+     Subcommand(typeof(RabbitCommand)), Subcommand(typeof(MysqlCommand))]
     class Program
     {
         public static int Main(string[] args)

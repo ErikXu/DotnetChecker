@@ -3,7 +3,7 @@ using McMaster.Extensions.CommandLineUtils;
 
 namespace DotnetChecker.Commands.Env
 {
-    [Command("env", Description = "Check environment variables."),
+    [Command("env", Description = "Check environment variables"),
      Subcommand(typeof(EnvGetCommand))]
     public class EnvCommand
     {
