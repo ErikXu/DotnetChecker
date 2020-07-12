@@ -1,7 +1,7 @@
 # DotnetChecker
 
 ## Introduction
-A tool helps you to check server information and check the .Net Core capable for software like redis, mongo etc, while .Net Core runtime or sdk is `not` required.
+A tool helps you to check server information and check the .Net Core capable for software like redis, mongo etc. While .Net Core runtime or sdk is `not` required.
 
 ## Build
 
@@ -56,7 +56,7 @@ Buffer size: 32
 Connected to 127.0.0.1:80
 ```
 
-- Check redis
+- Redis
 
 ```bash
 > ./dotnet-checker -c 127.0.0.1:6379
@@ -68,7 +68,7 @@ KeyDelete is normal.
 test-value
 ```
 
-- Check mongo
+- Mongo
 
 ```bash
 > ./dotnet-checker mongo -c mongodb://127.0.0.1:27017/test -d test
