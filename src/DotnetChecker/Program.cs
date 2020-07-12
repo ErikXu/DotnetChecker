@@ -1,4 +1,5 @@
-﻿using DotnetChecker.Commands.Env;
+﻿using DotnetChecker.Commands.ElasticSearch;
+using DotnetChecker.Commands.Env;
 using DotnetChecker.Commands.Info;
 using DotnetChecker.Commands.Mongo;
 using DotnetChecker.Commands.MySQL;
@@ -17,7 +18,7 @@ namespace DotnetChecker
      Subcommand(typeof(MongoCommand)), Subcommand(typeof(EnvCommand)), 
      Subcommand(typeof(PingCommand)), Subcommand(typeof(TelnetCommand)), 
      Subcommand(typeof(MssqlCommand)), Subcommand(typeof(MysqlCommand)),
-     Subcommand(typeof(RabbitCommand))]
+     Subcommand(typeof(RabbitCommand)), Subcommand(typeof(ElasticSearchCommand))]
     class Program
     {
         public static int Main(string[] args)
