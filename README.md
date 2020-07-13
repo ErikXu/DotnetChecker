@@ -85,6 +85,13 @@ DropCollection is normal.
 The message count of test is 3.
 ```
 
+- MySQL
+
+```bash
+> ./dotnet-checker mysql -c server=127.0.0.1;port=3306;user=root;password=root;database=test; -t table
+The row count of table is 1.
+```
+
 ## Best Practice
 
 1. Install [MinIO](https://min.io/)  
