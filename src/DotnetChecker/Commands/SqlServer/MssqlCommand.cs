@@ -30,10 +30,10 @@ namespace DotnetChecker.Commands.SqlServer
 
             try
             {
-                var sql = $"SELECT COUNT(*) FROM {Table};";
+                var sql = $"SELECT COUNT(1) FROM {Table};";
                 var conn = new SqlConnection(Connection);
 
-                var count = conn.Query<int>(sql);
+                var count = conn.Query<int>(sql).First();
                 console.WriteLine($"The row count of {Table} is {count}.");
             }
             catch (Exception ex)
