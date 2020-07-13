@@ -1,7 +1,8 @@
-﻿using System;
+using System;
 using Dapper;
 using McMaster.Extensions.CommandLineUtils;
 using MySql.Data.MySqlClient;
+using System.Linq;
 
 namespace DotnetChecker.Commands.MySQL
 {
