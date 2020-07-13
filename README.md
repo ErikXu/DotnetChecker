@@ -78,6 +78,13 @@ DeleteOne is normal.
 DropCollection is normal.
 ```
     
+- RabbitMQ
+
+```bash
+> ./dotnet-checker rabbit -u amqp://guest:guest@127.0.0.1:5672/ -q test
+The message count of test is 3.
+```
+
 ## Best Practice
 
 1. Install [MinIO](https://min.io/)  
