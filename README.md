@@ -92,6 +92,13 @@ The message count of test is 3.
 The row count of table is 1.
 ```
 
+- SQL Server
+
+```bash
+> ./dotnet-checker mssql -c server=127.0.0.1,41033;user id=root;password=root;database=Test; -t Table
+The row count of Table is 1.
+```
+
 ## Best Practice
 
 1. Install [MinIO](https://min.io/)  
