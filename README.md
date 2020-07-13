@@ -68,7 +68,7 @@ KeyDelete is normal.
 test-value
 ```
 
-- Mongo
+- MongoDB
 
 ```bash
 > ./dotnet-checker mongo -c mongodb://127.0.0.1:27017/test -d test
@@ -97,6 +97,16 @@ The row count of table is 1.
 ```bash
 > ./dotnet-checker mssql -c server=127.0.0.1,41033;user id=root;password=root;database=Test; -t Table
 The row count of Table is 1.
+```
+
+- ElasticSearch
+
+```bash
+> ./dotnet-checker es -u http://127.0.0.1:9200 -i test-*
+The index test-* is existed.
+
+> ./dotnet-checker es -u http://127.0.0.1:9200 -i test
+The index test is not existed.
 ```
 
 ## Best Practice
