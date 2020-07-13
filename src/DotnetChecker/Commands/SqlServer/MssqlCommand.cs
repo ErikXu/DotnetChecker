@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using Dapper;
 using McMaster.Extensions.CommandLineUtils;
+using System.Linq;
 
 namespace DotnetChecker.Commands.SqlServer
 {
