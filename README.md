@@ -115,3 +115,7 @@ The index test is not existed.
 2. Upload dotnet-checker to [MinIO](https://min.io/)    
 3. Download dotnet-checker in your server or docker container  
 4. Execute your checking
+
+## Planning
+
+1. curl
