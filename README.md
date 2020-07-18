@@ -56,6 +56,26 @@ Buffer size: 32
 Connected to 127.0.0.1:80
 ```
 
+- Curl
+```bash
+> ./dotnet-checker curl httpbin.org/post -m post -b {"key":"value"} -t application/json
+{
+  "args": {},
+  "data": "{key:value}",
+  "files": {},
+  "form": {},
+  "headers": {
+    "Content-Length": "11",
+    "Content-Type": "application/json; charset=utf-8",
+    "Host": "httpbin.org",
+    "X-Amzn-Trace-Id": "Root=1-5f12c469-5eec51483633a0a0bc7aeff8"
+  },
+  "json": null,
+  "origin": "xxx.xxx.xxx.xxx",
+  "url": "http://httpbin.org/post"
+}
+```
+
 - Redis
 
 ```bash
@@ -115,7 +135,3 @@ The index test is not existed.
 2. Upload dotnet-checker to [MinIO](https://min.io/)    
 3. Download dotnet-checker in your server or docker container  
 4. Execute your checking
-
-## Planning
-
-1. curl
