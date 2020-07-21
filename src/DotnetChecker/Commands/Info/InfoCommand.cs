@@ -1,7 +1,9 @@
-﻿using System;
+using System;
 using System.Diagnostics;
+using System.Linq;
 using System.Net;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 using McMaster.Extensions.CommandLineUtils;
 
 namespace DotnetChecker.Commands.Info
@@ -49,7 +51,7 @@ namespace DotnetChecker.Commands.Info
             if (isUnix)
             {
                 info.FileName = "/bin/bash";
-                info.Arguments = "-c \"free -m\"";
+                info.Arguments = "-c \"cat /proc/meminfo\"";
 
                 using var process = Process.Start(info);
                 if (process != null)
@@ -57,11 +59,16 @@ namespace DotnetChecker.Commands.Info
                     var output = process.StandardOutput.ReadToEnd();
 
                     var lines = output.Split("\n");
-                    var memory = lines[1].Split(" ", StringSplitOptions.RemoveEmptyEntries);
 
-                    var total = double.Parse(memory[1]);
-                    var used = double.Parse(memory[2]);
-                    var free = double.Parse(memory[3]);
+                    var regex = new Regex("[0-9]+");
+
+                    var totalLine = lines.First(n => n.StartsWith("MemTotal"));
+                    var total = Math.Round(double.Parse(regex.Matches(totalLine)[0].Value) / 1024, 0);
+
+                    var freeLine = lines.First(n => n.StartsWith("MemFree"));
+                    var free = Math.Round(double.Parse(regex.Matches(freeLine)[0].Value) / 1024, 0);
+
+                    var used = total - free;
 
                     _console.WriteLine($"Memory: Total {total}(M), Used {used}(M), Free {free}(M)");
                 }
